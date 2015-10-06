@@ -34,7 +34,7 @@
     </style>-->
 </head>
 
-<body id="TTSApp" >
+<body id="TTSApp">
     <script id="dateTemplate" type="text/x-kendo-template">
         #:format_time_date(selectItem.initiateDate)#
     </script>
@@ -52,7 +52,6 @@
                     <div>
                         <img id="Img1" src="styles/images/ttsLogo.png" style="width: 80%" />
                     </div>
-
                     <form id="login-form" data-bind="events: { keyup: checkEnter }">
                         <ul data-role="listview" data-style="inset">
                             <li>
@@ -139,7 +138,6 @@
             </li>
         </ul>
     </div>
-
     <div data-role="view" id="Re-AllocateWithStatus" data-model="app.reallocateService.viewModel" data-layout="tabstrip-layout" data-show="app.reallocateService.showlistWithStatus">
         <div data-role="header">
             <div data-role="navbar">
@@ -271,7 +269,7 @@
             </a>
     </script>
     <!--My Team-->
-    <div data-title="My Team" data-role="view"  id="tabstrip-team" data-init="app.myTeamService.init" data-show="app.myTeamService.show" data-hide="app.myTeamService.hide" data-model="app.myTeamService.viewModel" data-layout="tabstrip-layout">
+    <div data-title="My Team" data-role="view" id="tabstrip-team" data-init="app.myTeamService.init" data-show="app.myTeamService.show" data-hide="app.myTeamService.hide" data-model="app.myTeamService.viewModel" data-layout="tabstrip-layout">
         <!--Header-->
         <div data-role="header">
             <div data-role="navbar">
@@ -290,8 +288,6 @@
         <span>Last Updated :
                 <span data-bind="text: lastupdateteam"></span>
         </span>
-
-
         <!--<i class="fa fa-refresh" style="color: green; font-size: 1.4em" data-bind="click: refresh"></i>-->
         <ul data-role="listview" data-style="inset" style="background-color: rgba(244,244,244,0.95)">
             <li>
@@ -324,7 +320,7 @@
             </div>
              -->
         <div data-role="scrollview" data-page="0" data-content-height="100%" data-pager-overlay="false">
-            <div class="slideview"  data-role="page">
+            <div class="slideview" data-role="page">
                 <ul id="lvMyTeam"></ul>
             </div>
             <div class="slideview" data-role="page">
@@ -362,7 +358,6 @@
         <div class="position-right">
             <div style="width:50px;display:inline-block" data-userid="${userId}" data-username="${fullName}" data-statusid="01" data-statusname="Assign">
                 <a>
-
                     <i class="fa-2x balance iconTTSM2-as" data-userid="${userId}" data-username="${fullName}" data-statusid="01" data-statusname="Assign" />&nbsp;&nbsp;${sumAssing}
                 </a>
             </div>
@@ -489,7 +484,7 @@
         <div style="height:10px">&nbsp;</div>
         <!-- <ul id="lvMy"></ul> -->
         <div data-role="scrollview" data-page="0" data-content-height="100%" data-pager-overlay="false">
-            <div class="slideviewMy"  data-role="page">
+            <div class="slideviewMy" data-role="page">
                 <ul id="lvMy"></ul>
             </div>
             <div class="slideviewMy" data-role="page">
@@ -506,7 +501,6 @@
             <ul id="lvTeam"></ul>
             <!--</div>-->
         </div>
-
     </div>
     <script id="team-template" type="text/x-kendo-template">
         <div>
@@ -537,7 +531,6 @@
             <i class="fa fa-male"></i>&nbsp;${fullName}
         </div>
         <div class="position-right">
-            
             <div style="width:50px;display:inline-block">
                 <i class="fa-2x balance iconTTSM2-as"></i>&nbsp;&nbsp;${sumAssing}
             </div>
@@ -556,7 +549,6 @@
             <div style="width:50px;display:inline-block">
                 <i class="fa-2x balance iconTTSM2-wd"></i>&nbsp;&nbsp;${sumWaitDetail}
             </div>
-            
         </div>
     </script>
     <!--Member View-->
@@ -2936,7 +2928,6 @@
             </div>
         </div>
         <ul data-role="listview" data-style="inset" data-type="group">
-            
             <li>Field Engineer
                 <ul>
                     <li>
@@ -3388,7 +3379,7 @@
         <ul data-role="listview" id="lvZoneFilter" data-style="inset">
         </ul>
     </div>
-    <!--setting-->
+    <!--Power Search-->
     <div data-role="view" id="Setting" data-layout="tabstrip-layout">
         <div data-role="header">
             <div data-role="navbar">
@@ -3396,6 +3387,280 @@
                 <a data-role="button" data-rel="drawer" href="#my-drawer" class="ion" data-icon="menu" data-align="left"></a>
             </div>
         </div>
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <a href="#Profile">Profile</a>
+            </li>
+            <!--<li>Sync Data
+                <a data-role="switch"></a>
+                <input type="checkbox" data-role="switch" data-checked="true" />
+            </li-->
+            <!--<li>Share Location
+                <input data-role="switch" checked="checked"></li>-->
+            <!-- <li>
+                <a href="#Help">Help</a>
+            </li> -->
+        </ul>
+    </div>
+    <div data-role="view" id="power-search" data-layout="tabstrip-layout">
+        <div data-role="header">
+            <div data-role="navbar">
+                <span>Power Search</span>
+                <a data-role="button" data-rel="drawer" href="#my-drawer" class="ion" data-icon="menu" data-align="left"></a>
+            </div>
+        </div>
+        <ul data-role="listview" data-style="inset" data-type="group">
+            <li>Job Condition
+                <ul>
+                    <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                    <div class="position-left">
+                        <b>Job ID</b>
+                    </div>
+                    <div class="position-right">
+                        <input class="k-textbox"  data-bind="value: selectItem.trId" placeholder="Job ID" />
+                    </div>
+                </li>
+
+<li data-icon="contact">
+                    <div class="position-left">
+                        <b>Region</b>
+                    </div>
+                    <!--<div class="position-right">
+                    <label data-bind="text: selectItem.status"></label>
+                </div>-->
+                    <div class="position-right">
+                        <select id="djbstatusAssign" data-bind="visible: isAccept">
+                            <option value="02" selected="selected">--- Select ---</option>
+                            <option value="03">Region 1</option>
+                            <option value="04">Region 2</option>
+                        </select>                        
+                    </div>
+                    </li>
+
+                    <li data-icon="contact">
+                    <div class="position-left">
+                        <b>Zone</b>
+                    </div>
+                    <!--<div class="position-right">
+                    <label data-bind="text: selectItem.status"></label>
+                </div>-->
+                    <div class="position-right">
+                        <select id="djbstatusAssign" data-bind="visible: isAccept">
+                            <option value="02" selected="selected">--- Select ---</option>
+                            <option value="03">Zone 1</option>
+                            <option value="04">Zone 2</option>
+                        </select>                        
+                    </div>
+                    </li>
+
+                    <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                    <div class="position-left">
+                        <b>Site Code</b>
+                    </div>
+                    <div class="position-right">
+                        <input class="k-textbox"  data-bind="value: selectItem.trId" placeholder="Site Code" />
+                    </div>
+                </li>
+
+                
+<li>
+<BLOCKQUOTE><b>
+<table > 
+<tr><td >Assign Date</td>
+<td><PRE>                 </PRE></td>
+ 
+ 
+<td>To</td> 
+</tr> 
+
+</table></b></BLOCKQUOTE> </li>
+
+<li>
+<BLOCKQUOTE><b>
+<table > 
+<tr><td >Finish Date</td>
+<td><PRE>                 </PRE></td>
+<td>To</td> 
+</tr> 
+
+</table></b></BLOCKQUOTE> </li>
+
+
+
+<li data-icon="contact">
+                    <div class="position-left">
+                        <b>Region</b>
+                    </div>
+                    <!--<div class="position-right">
+                    <label data-bind="text: selectItem.status"></label>
+                </div>-->
+                    <div class="position-right">
+                        <select id="djbstatusAssign" data-bind="visible: isAccept">
+                            <option value="02" selected="selected">--- Select ---</option>
+                            <option value="03">Region 1</option>
+                            <option value="04">Region 2</option>
+                        </select>                        
+                    </div>
+                    </li>
+
+                    <li data-icon="contact">
+                    <div class="position-left">
+                        <b>Zone</b>
+                    </div>
+                    <!--<div class="position-right">
+                    <label data-bind="text: selectItem.status"></label>
+                </div>-->
+                    <div class="position-right">
+                        <select id="djbstatusAssign" data-bind="visible: isAccept">
+                            <option value="02" selected="selected">--- Select ---</option>
+                            <option value="03">Zone 1</option>
+                            <option value="04">Zone 2</option>
+                        </select>                        
+                    </div>
+                    </li>
+
+
+
+
+
+
+
+
+
+
+                <li data-icon="contact" data-bind="visible: isReportType" class="job-bind">
+                    <div class="position-left">
+                        <b>Job Report Type</b>
+                        <font style="color: red">*</font>
+                    </div>
+                    <div class="position-right">
+                        <select id="ddReportType" data-bind="value: selectItem.reportTypeId">
+                            <!--option>Solution Complete</option>
+                        <option>Solution Not Complete</option>
+                        <option>Solution will be Followed-up</option>
+                        <option>Visit Site and Solution Complete</option>
+                        <option>Visit Site but Solution Not Complete</option>
+                        <option>Visit Site and Solution will be Followed-up</option-->
+                        </select>
+                    </div>
+                </li>
+                <li data-bind="visible: isProblemC" class="job-bind">
+                    <a href="#job-problem-cause"><b>Problem Cause</b><font style="color: red">*</font>
+                    (
+                        <label data-bind="text: cntProblemCause" class="job-bind">
+                        </label>
+                    )
+                </a>
+                </li>
+                <li data-bind="visible: isProblemCM" class="job-bind">
+                    <a href="#job-problem-cause-multi"><b>Problem Cause</b><font style="color: red">*</font>
+                    (
+                        <label data-bind="text: cntProblemCause" class="job-bind">
+                        </label>
+                    )
+                </a>
+                </li>
+                <li data-bind="visible: isProblemS" class="job-bind">
+                    <a href="#job-problem-solve"><b>Problem Solve</b>
+                    (
+                        <label data-bind="text: cntProblemSolve" class="job-bind">
+                        </label>
+                    )
+                </a>
+                </li>
+                <li data-bind="visible: isProblemSR" class="job-bind">
+                    <a href="#job-problem-solve-radio"><b>&nbsp;&nbsp;&nbsp;&nbsp;Permanent/Temporary</b>
+                </a>
+                </li>
+                <li data-bind="visible: isProcess" class="job-bind">
+                    <a href="#job-problem-solve-process"><b>Process</b></a>
+                </li>
+                <li data-bind="visible: isReason" class="job-bind">
+                    <a href="#reason-over-due">
+                        <b>Reason Over Due</b>
+                        <font style="color: red">*</font>
+                    </a>
+                </li>
+                <li data-bind="visible: isReasonDesc" class="job-bind">
+                    <div class="position-right">
+                        <label data-icon="contact" data-bind="text: selectItem.reasonOverdueDesc"></label>
+                    </div>
+                </li>
+                <li data-icon="contact" class="job-bind" data-bind="visible: isReportType">
+                    <label>
+                        <b>Report Detail</b>
+                        <font style="color: red" data-bind="visible: isReportType">*</font>
+                    </label>
+                    <div class="position-right">
+                        <p data-bind="text: selectItem.oldReportDetail"></p>
+                        <textarea placeholder="Input Report Detail..." class="k-textbox" style="height: 50px" data-bind="value: selectItem.report"></textarea>
+                    </div>
+                </li>
+                <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                    <div class="position-left">
+                        <b>Latitude</b>
+                    </div>
+                    <div class="position-right">
+                        <label class="location" data-bind="text: selectItem.latitude"></label>
+                    </div>
+                </li>
+                <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                    <div class="position-left">
+                        <b>Longitude</b>
+                    </div>
+                    <div class="position-right">
+                        <label class="location" data-bind="text: selectItem.longtitude"></label>
+                    </div>
+                </li>
+                <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                    <div class="position-left">
+                        <b></b>
+                    </div>
+                    <div class="position-right">
+                        <a data-role="button" data-icon="fa-pin" data-bind="click: getLocation">get location</a>
+                    </div>
+                </li>
+                <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                    <div class="position-left">
+                        <b>Need Move Equipment Document</b>
+                    </div>
+                    <div class="position-right">
+                        <input id="switchAAM" data-role="switch" data-bind="checked: isAMM" data-change="app.jobService.viewModel.onSwitchChange" />
+                    </div>
+                </li>
+                <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                    <div class="position-left">
+                        <b>Trouble Report Id</b>
+                    </div>
+                    <div class="position-right">
+                        <input class="k-textbox" data-bind="value: selectItem.trId" placeholder="Input Trouble Report Id..." />
+                    </div>
+                </li>
+                <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                    <div class="position-left">
+                        <b>Fault/Alarm Number</b>
+                    </div>
+                    <div class="position-right">
+                        <input class="k-textbox" data-bind="value: selectItem.faultAlarmNumber" placeholder="Input Fault/Alarm Number..." />
+                    </div>
+                </li>
+
+                    
+                </ul>
+
+            </li>
+        </ul>
+        
+
+
+
+
+
+            
+      
+
+
+
         <ul data-role="listview" data-style="inset">
             <li>
                 <a href="#Profile">Profile</a>
@@ -3419,7 +3684,6 @@
                 <a data-role="button" data-bind="click: gotoAlarmDtl" data-icon="check" data-align="right"></a>
             </div>
         </div>
-        
         <center class="job-bar" data-bind="text: alarmJobId"></center>
         <ul id="AlarmGroup" data-role="buttongroup" style="color: #74A333" data-index="0">
             <li>Site Access</li>
@@ -3753,7 +4017,7 @@
     <script id="lv-site-alarm-template" type="text/x-kendo-template">
         <label data-icon="contact">
             #if(checkFlag=="1" || checkFlag=="2"){#
-            <input type="checkbox" class="chkSiteAlarm-${siteCode}" #= checkFlag=="2" ? checked="checked" : "" # /> #}# ${siteCode}
+            <input type="checkbox" class="chkSiteAlarm-${siteCode}" #=c heckFlag=="2" ? checked="checked" : "" # /> #}# ${siteCode}
         </label>
     </script>
     <script id="multi-zone-template" type="text/x-kendo-template">
@@ -3835,7 +4099,6 @@
         <div data-role="footer">
             <div class="mytabstrip" data-role="tabstrip">
                 <!--<a href="#/" data-icon="home">Home</a>-->
-
                 <a href="#tabstrip-my" class="tMy ion" data-icon="ion-my">My</a>
                 <a href="#tabstrip-team" class="tTeam ion" data-icon="ion-team">Team</a>
                 <a href="#tabstrip-assign" class="tAssign gab" data-icon="gab-assign">Inbox</a>
@@ -3862,15 +4125,14 @@
         <ul data-role="listview" class="left-menu">
             <li class="ion balance" data-icon="ion-home"><a href="#tabstrip-assign" data-transition="none">Home</a></li>
             <li class="ion calm" data-icon="ion-multi-change"><a data-bind="click: gotoMulti" data-transition="none">Multi-Change</a></li>
-            <!-- <li class="ion assertive" data-icon="ion-power-search"><a href="#drawer-drafts" data-transition="none">Power Search</a></li> -->
+            <li class="ion assertive" data-icon="ion-power-search"><a href="#power-search" data-transition="none">Power Search</a></li>
             <li class="ion positive" data-icon="ion-setting"><a href="#Setting" data-transition="none">Setting</a></li>
             <li class="ion royal" data-icon="ion-help"><a href="#Help" data-transition="none">Help</a></li>
             <li class="ion dark" data-icon="ion-logout"><a data-bind="click: logout" data-transition="none">Log Out</a></li>
         </ul>
     </div>
-    <script src="scripts/angular/angular.min.js" ></script>
-    <script src="scripts/angular/myApp.js" ></script>
-
+    <script src="scripts/angular/angular.min.js"></script>
+    <script src="scripts/angular/myApp.js"></script>
     <!---script bottom only-->
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
