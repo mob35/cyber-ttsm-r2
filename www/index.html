@@ -3407,273 +3407,167 @@
             <div data-role="navbar">
                 <span>Power Search</span>
                 <a data-role="button" data-rel="drawer" href="#my-drawer" class="ion" data-icon="menu" data-align="left"></a>
+                <a href="#tabstrip-edit" data-role="button" class="fa" data-icon="fa-back" data-align="left"></a>
+                <a data-role="button" data-bind="click: refresh" data-icon="delete" style="color: white" data-align="right"></a>
+                <a href="#problem-cause-multi-master" data-role="button" data-icon="add" style="color: white" data-align="right"></a>
+
+                
             </div>
         </div>
         <ul data-role="listview" data-style="inset" data-type="group">
             <li>Job Condition
                 <ul>
+
                     <li data-icon="contact" data-bind="invisible: isMoreDetail">
-                    <div class="position-left">
-                        <b>Job ID</b>
-                    </div>
-                    <div class="position-right">
-                        <input class="k-textbox"  data-bind="value: selectItem.trId" placeholder="Job ID" />
-                    </div>
-                </li>
-
-<li data-icon="contact">
-                    <div class="position-left">
-                        <b>Region</b>
-                    </div>
-                    <!--<div class="position-right">
-                    <label data-bind="text: selectItem.status"></label>
-                </div>-->
-                    <div class="position-right">
-                        <select id="djbstatusAssign" data-bind="visible: isAccept">
-                            <option value="02" selected="selected">--- Select ---</option>
-                            <option value="03">Region 1</option>
-                            <option value="04">Region 2</option>
-                        </select>                        
-                    </div>
+                        <div class="position-left">
+                            <b>Job ID</b>
+                        </div>
+                        <div class="position-right">
+                            <input class="k-textbox" data-bind="value: selectItem.trId" placeholder="Job ID" />
+                        </div>
                     </li>
-
                     <li data-icon="contact">
-                    <div class="position-left">
-                        <b>Zone</b>
-                    </div>
-                    <!--<div class="position-right">
+                        <div class="position-left">
+                            <b>Region</b>
+                        </div>
+                        <!--<div class="position-right">
                     <label data-bind="text: selectItem.status"></label>
                 </div>-->
-                    <div class="position-right">
-                        <select id="djbstatusAssign" data-bind="visible: isAccept">
-                            <option value="02" selected="selected">--- Select ---</option>
-                            <option value="03">Zone 1</option>
-                            <option value="04">Zone 2</option>
-                        </select>                        
-                    </div>
+                        <div class="position-right">
+                            <select id="djbstatusAssign" data-bind="visible: isAccept">
+                                <option value="02" selected="selected">--- Select ---</option>
+                                <option value="03">Region 1</option>
+                                <option value="04">Region 2</option>
+                            </select>
+                        </div>
                     </li>
-
+                    <li data-icon="contact">
+                        <div class="position-left">
+                            <b>Zone</b>
+                        </div>
+                        <!--<div class="position-right">
+                    <label data-bind="text: selectItem.status"></label>
+                </div>-->
+                        <div class="position-right">
+                            <select id="djbstatusAssign" data-bind="visible: isAccept">
+                                <option value="02" selected="selected">--- Select ---</option>
+                                <option value="03">Zone 1</option>
+                                <option value="04">Zone 2</option>
+                            </select>
+                        </div>
+                    </li>
                     <li data-icon="contact" data-bind="invisible: isMoreDetail">
-                    <div class="position-left">
-                        <b>Site Code</b>
-                    </div>
-                    <div class="position-right">
-                        <input class="k-textbox"  data-bind="value: selectItem.trId" placeholder="Site Code" />
-                    </div>
-                </li>
-
-                
-<li>
-<BLOCKQUOTE><b>
+                        <div class="position-left">
+                            <b>Site Code</b>
+                        </div>
+                        <div class="position-right">
+                            <input class="k-textbox" data-bind="value: selectItem.trId" placeholder="Site Code" />
+                        </div>
+                    </li>
+                    <li>
+                        <BLOCKQUOTE><b>
 <table > 
 <tr><td >Assign Date</td>
-<td><PRE>                 </PRE></td>
+<td><PRE>       </PRE></td>
  
  
 <td>To</td> 
 </tr> 
+<tr><td ><input class="k-textbox"  data-bind="value: selectItem.trId" placeholder="dd-mm-yyyy" /></td>
+<td><PRE>       </PRE></td>
+ 
+ 
+<td ><input class="k-textbox"  data-bind="value: selectItem.trId" placeholder="dd-mm-yyyy" /></td> 
+</tr> 
 
-</table></b></BLOCKQUOTE> </li>
-
-<li>
-<BLOCKQUOTE><b>
+</table></b></BLOCKQUOTE>
+                    </li>
+                    <li>
+                        <BLOCKQUOTE><b>
 <table > 
 <tr><td >Finish Date</td>
-<td><PRE>                 </PRE></td>
+<td><PRE>       </PRE></td>
 <td>To</td> 
-</tr> 
+</tr>
+<tr><td ><input class="k-textbox"  data-bind="value: selectItem.trId" placeholder="dd-mm-yyyy" /></td>
+<td><PRE>       </PRE></td>
+ 
+ 
+<td ><input class="k-textbox"  data-bind="value: selectItem.trId" placeholder="dd-mm-yyyy" /></td> 
+</tr>  
 
-</table></b></BLOCKQUOTE> </li>
-
-
-
-<li data-icon="contact">
-                    <div class="position-left">
-                        <b>Region</b>
-                    </div>
-                    <!--<div class="position-right">
-                    <label data-bind="text: selectItem.status"></label>
-                </div>-->
-                    <div class="position-right">
-                        <select id="djbstatusAssign" data-bind="visible: isAccept">
-                            <option value="02" selected="selected">--- Select ---</option>
-                            <option value="03">Region 1</option>
-                            <option value="04">Region 2</option>
-                        </select>                        
-                    </div>
+</table></b></BLOCKQUOTE>
                     </li>
-
                     <li data-icon="contact">
-                    <div class="position-left">
-                        <b>Zone</b>
-                    </div>
-                    <!--<div class="position-right">
+                        <div class="position-left">
+                            <b>Status</b>
+                        </div>
+                        <!--<div class="position-right">
                     <label data-bind="text: selectItem.status"></label>
                 </div>-->
-                    <div class="position-right">
-                        <select id="djbstatusAssign" data-bind="visible: isAccept">
-                            <option value="02" selected="selected">--- Select ---</option>
-                            <option value="03">Zone 1</option>
-                            <option value="04">Zone 2</option>
-                        </select>                        
-                    </div>
+                        <div class="position-right">
+                            <select id="djbstatusAssign" data-bind="visible: isAccept">
+                                <option value="02" selected="selected">--- Select ---</option>
+                                <option value="03">Status 1</option>
+                                <option value="04">Status 2</option>
+                            </select>
+                        </div>
                     </li>
-
-
-
-
-
-
-
-
-
-
-                <li data-icon="contact" data-bind="visible: isReportType" class="job-bind">
-                    <div class="position-left">
-                        <b>Job Report Type</b>
-                        <font style="color: red">*</font>
-                    </div>
-                    <div class="position-right">
-                        <select id="ddReportType" data-bind="value: selectItem.reportTypeId">
-                            <!--option>Solution Complete</option>
-                        <option>Solution Not Complete</option>
-                        <option>Solution will be Followed-up</option>
-                        <option>Visit Site and Solution Complete</option>
-                        <option>Visit Site but Solution Not Complete</option>
-                        <option>Visit Site and Solution will be Followed-up</option-->
-                        </select>
-                    </div>
-                </li>
-                <li data-bind="visible: isProblemC" class="job-bind">
-                    <a href="#job-problem-cause"><b>Problem Cause</b><font style="color: red">*</font>
-                    (
-                        <label data-bind="text: cntProblemCause" class="job-bind">
-                        </label>
-                    )
-                </a>
-                </li>
-                <li data-bind="visible: isProblemCM" class="job-bind">
-                    <a href="#job-problem-cause-multi"><b>Problem Cause</b><font style="color: red">*</font>
-                    (
-                        <label data-bind="text: cntProblemCause" class="job-bind">
-                        </label>
-                    )
-                </a>
-                </li>
-                <li data-bind="visible: isProblemS" class="job-bind">
-                    <a href="#job-problem-solve"><b>Problem Solve</b>
-                    (
-                        <label data-bind="text: cntProblemSolve" class="job-bind">
-                        </label>
-                    )
-                </a>
-                </li>
-                <li data-bind="visible: isProblemSR" class="job-bind">
-                    <a href="#job-problem-solve-radio"><b>&nbsp;&nbsp;&nbsp;&nbsp;Permanent/Temporary</b>
-                </a>
-                </li>
-                <li data-bind="visible: isProcess" class="job-bind">
-                    <a href="#job-problem-solve-process"><b>Process</b></a>
-                </li>
-                <li data-bind="visible: isReason" class="job-bind">
-                    <a href="#reason-over-due">
-                        <b>Reason Over Due</b>
-                        <font style="color: red">*</font>
-                    </a>
-                </li>
-                <li data-bind="visible: isReasonDesc" class="job-bind">
-                    <div class="position-right">
-                        <label data-icon="contact" data-bind="text: selectItem.reasonOverdueDesc"></label>
-                    </div>
-                </li>
-                <li data-icon="contact" class="job-bind" data-bind="visible: isReportType">
-                    <label>
-                        <b>Report Detail</b>
-                        <font style="color: red" data-bind="visible: isReportType">*</font>
-                    </label>
-                    <div class="position-right">
-                        <p data-bind="text: selectItem.oldReportDetail"></p>
-                        <textarea placeholder="Input Report Detail..." class="k-textbox" style="height: 50px" data-bind="value: selectItem.report"></textarea>
-                    </div>
-                </li>
-                <li data-icon="contact" data-bind="invisible: isMoreDetail">
-                    <div class="position-left">
-                        <b>Latitude</b>
-                    </div>
-                    <div class="position-right">
-                        <label class="location" data-bind="text: selectItem.latitude"></label>
-                    </div>
-                </li>
-                <li data-icon="contact" data-bind="invisible: isMoreDetail">
-                    <div class="position-left">
-                        <b>Longitude</b>
-                    </div>
-                    <div class="position-right">
-                        <label class="location" data-bind="text: selectItem.longtitude"></label>
-                    </div>
-                </li>
-                <li data-icon="contact" data-bind="invisible: isMoreDetail">
-                    <div class="position-left">
-                        <b></b>
-                    </div>
-                    <div class="position-right">
-                        <a data-role="button" data-icon="fa-pin" data-bind="click: getLocation">get location</a>
-                    </div>
-                </li>
-                <li data-icon="contact" data-bind="invisible: isMoreDetail">
-                    <div class="position-left">
-                        <b>Need Move Equipment Document</b>
-                    </div>
-                    <div class="position-right">
-                        <input id="switchAAM" data-role="switch" data-bind="checked: isAMM" data-change="app.jobService.viewModel.onSwitchChange" />
-                    </div>
-                </li>
-                <li data-icon="contact" data-bind="invisible: isMoreDetail">
-                    <div class="position-left">
-                        <b>Trouble Report Id</b>
-                    </div>
-                    <div class="position-right">
-                        <input class="k-textbox" data-bind="value: selectItem.trId" placeholder="Input Trouble Report Id..." />
-                    </div>
-                </li>
-                <li data-icon="contact" data-bind="invisible: isMoreDetail">
-                    <div class="position-left">
-                        <b>Fault/Alarm Number</b>
-                    </div>
-                    <div class="position-right">
-                        <input class="k-textbox" data-bind="value: selectItem.faultAlarmNumber" placeholder="Input Fault/Alarm Number..." />
-                    </div>
-                </li>
-
-                    
+                    <li data-icon="contact">
+                        <div class="position-left">
+                            <b>Piority</b>
+                        </div>
+                        <!--<div class="position-right">
+                    <label data-bind="text: selectItem.status"></label>
+                </div>-->
+                        <div class="position-right">
+                            <select id="djbstatusAssign" data-bind="visible: isAccept">
+                                <option value="02" selected="selected">--- Select ---</option>
+                                <option value="03">Piority 1</option>
+                                <option value="04">Piority 2</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                        <div class="position-left">
+                            <b>Title</b>
+                        </div>
+                        <div class="position-right">
+                            <input class="k-textbox" data-bind="value: selectItem.trId" placeholder="Title" />
+                        </div>
+                    </li>
+                    <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                        <div class="position-left">
+                            <b>Site name Thai</b>
+                        </div>
+                        <div class="position-right">
+                            <input class="k-textbox" data-bind="value: selectItem.trId" placeholder="Site name Thai" />
+                        </div>
+                    </li>
                 </ul>
-
             </li>
         </ul>
-        
-
-
-
-
-
-            
-      
-
-
-
-        <ul data-role="listview" data-style="inset">
-            <li>
-                <a href="#Profile">Profile</a>
+        <ul data-role="listview" data-style="inset" data-type="group">
+            <li>Field Engineer Condition
+                <ul>
+                    <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                        <div class="position-left">
+                            <b>Assign To</b>
+                        </div>
+                        <div class="position-right">
+                            <input class="k-textbox" data-bind="value: selectItem.trId" placeholder="Assign To" />
+                        </div>
+                    </li>
+                    <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                        <div class="position-left">
+                            <b>Assign By</b>
+                        </div>
+                        <div class="position-right">
+                            <input class="k-textbox" data-bind="value: selectItem.faultAlarmNumber" placeholder="Assign By" />
+                        </div>
+                    </li>
+                </ul>
             </li>
-            <!--<li>Sync Data
-                <a data-role="switch"></a>
-                <input type="checkbox" data-role="switch" data-checked="true" />
-            </li-->
-            <!--<li>Share Location
-                <input data-role="switch" checked="checked"></li>-->
-            <!-- <li>
-                <a href="#Help">Help</a>
-            </li> -->
         </ul>
     </div>
     <div data-role="view" id="SiteAlarm" data-layout="tabstrip-layout" data-model="app.jobService.viewModel" data-init="app.jobService.initSiteAlarm">
