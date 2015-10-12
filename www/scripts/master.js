@@ -710,8 +710,6 @@
  		},
  		loadMyJBProblemCauseM: function() {
  			var that = this;
- 			//var myJBs = null;
-////console.log("loadJobpcm");
  			$.ajax({ //using jsfiddle's echo service to simulate remote data loading
  				type: "POST", timeout: 180000,
  				url: app.configService.serviceUrl + 'post-json.service?s=transaction-service&o=getJobProblemCauseM.json',
@@ -756,8 +754,7 @@
  		},
  		loadMyJBProblemSolve: function() {
  			var that = this;
- 			//var myJBs = null;
-////console.log("loadJobps:complete");
+ 			
  			$.ajax({ //using jsfiddle's echo service to simulate remote data loading
  				type: "POST", timeout: 180000,
  				url: app.configService.serviceUrl + 'post-json.service?s=transaction-service&o=getJobProblemSolve.json',
@@ -837,8 +834,6 @@
  				},
  				complete: function() {}
  			});
-
-
  		},
  		setCount: function(assignCount, acceptCount) {
  			var tabstrip = $(".mytabstrip").data("kendoMobileTabStrip");
@@ -876,11 +871,8 @@
  			}
 			 setTimeout(function () {
 				 app.masterService.viewModel.hideLoading();
-			 },1000);
-			  
+			 },1000);  
  		},
-
-
  	});
 
  	app.masterService = {
@@ -890,7 +882,6 @@
 
 
  			////console.log("master init end");
-
  		},
  		show: function(e) {
 

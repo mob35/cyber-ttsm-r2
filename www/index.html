@@ -34,7 +34,7 @@
     </style>-->
 </head>
 
-<body id="TTSApp">
+<body id="TTSApp" >
     <script id="dateTemplate" type="text/x-kendo-template">
         #:format_time_date(selectItem.initiateDate)#
     </script>
@@ -52,6 +52,7 @@
                     <div>
                         <img id="Img1" src="styles/images/ttsLogo.png" style="width: 80%" />
                     </div>
+
                     <form id="login-form" data-bind="events: { keyup: checkEnter }">
                         <ul data-role="listview" data-style="inset">
                             <li>
@@ -138,6 +139,7 @@
             </li>
         </ul>
     </div>
+
     <div data-role="view" id="Re-AllocateWithStatus" data-model="app.reallocateService.viewModel" data-layout="tabstrip-layout" data-show="app.reallocateService.showlistWithStatus">
         <div data-role="header">
             <div data-role="navbar">
@@ -269,7 +271,7 @@
             </a>
     </script>
     <!--My Team-->
-    <div data-title="My Team" data-role="view" id="tabstrip-team" data-init="app.myTeamService.init" data-show="app.myTeamService.show" data-hide="app.myTeamService.hide" data-model="app.myTeamService.viewModel" data-layout="tabstrip-layout">
+    <div data-title="My Team" data-role="view"  id="tabstrip-team" data-init="app.myTeamService.init" data-show="app.myTeamService.show" data-hide="app.myTeamService.hide" data-model="app.myTeamService.viewModel" data-layout="tabstrip-layout">
         <!--Header-->
         <div data-role="header">
             <div data-role="navbar">
@@ -288,6 +290,8 @@
         <span>Last Updated :
                 <span data-bind="text: lastupdateteam"></span>
         </span>
+
+
         <!--<i class="fa fa-refresh" style="color: green; font-size: 1.4em" data-bind="click: refresh"></i>-->
         <ul data-role="listview" data-style="inset" style="background-color: rgba(244,244,244,0.95)">
             <li>
@@ -320,7 +324,7 @@
             </div>
              -->
         <div data-role="scrollview" data-page="0" data-content-height="100%" data-pager-overlay="false">
-            <div class="slideview" data-role="page">
+            <div class="slideview"  data-role="page">
                 <ul id="lvMyTeam"></ul>
             </div>
             <div class="slideview" data-role="page">
@@ -358,6 +362,7 @@
         <div class="position-right">
             <div style="width:50px;display:inline-block" data-userid="${userId}" data-username="${fullName}" data-statusid="01" data-statusname="Assign">
                 <a>
+
                     <i class="fa-2x balance iconTTSM2-as" data-userid="${userId}" data-username="${fullName}" data-statusid="01" data-statusname="Assign" />&nbsp;&nbsp;${sumAssing}
                 </a>
             </div>
@@ -484,7 +489,7 @@
         <div style="height:10px">&nbsp;</div>
         <!-- <ul id="lvMy"></ul> -->
         <div data-role="scrollview" data-page="0" data-content-height="100%" data-pager-overlay="false">
-            <div class="slideviewMy" data-role="page">
+            <div class="slideviewMy"  data-role="page">
                 <ul id="lvMy"></ul>
             </div>
             <div class="slideviewMy" data-role="page">
@@ -501,6 +506,7 @@
             <ul id="lvTeam"></ul>
             <!--</div>-->
         </div>
+
     </div>
     <script id="team-template" type="text/x-kendo-template">
         <div>
@@ -531,6 +537,7 @@
             <i class="fa fa-male"></i>&nbsp;${fullName}
         </div>
         <div class="position-right">
+            
             <div style="width:50px;display:inline-block">
                 <i class="fa-2x balance iconTTSM2-as"></i>&nbsp;&nbsp;${sumAssing}
             </div>
@@ -549,6 +556,7 @@
             <div style="width:50px;display:inline-block">
                 <i class="fa-2x balance iconTTSM2-wd"></i>&nbsp;&nbsp;${sumWaitDetail}
             </div>
+            
         </div>
     </script>
     <!--Member View-->
@@ -1630,6 +1638,7 @@
             <div data-role="navbar">
                 <a data-role="button" class="fa" data-icon="fa-back" data-align="left" data-bind="click: onBack"></a>
                 <span data-role="view-title" data-bind="text: selectItem.jobId"></span>
+                <a data-role="button" class="fa" data-icon="fa-save" data-align="right" data-bind="click: changeStatusMore"></a>
                 <a data-role="button" class="fa" data-icon="fa-save" data-align="right" data-bind="click: changeStatus"></a>
             </div>
         </header>
@@ -2928,6 +2937,7 @@
             </div>
         </div>
         <ul data-role="listview" data-style="inset" data-type="group">
+            
             <li>Field Engineer
                 <ul>
                     <li>
@@ -3379,7 +3389,7 @@
         <ul data-role="listview" id="lvZoneFilter" data-style="inset">
         </ul>
     </div>
-    <!--Power Search-->
+    <!--setting-->
     <div data-role="view" id="Setting" data-layout="tabstrip-layout">
         <div data-role="header">
             <div data-role="navbar">
@@ -3402,17 +3412,13 @@
             </li> -->
         </ul>
     </div>
-    <div data-role="view" id="power-search" data-layout="tabstrip-layout">
+    
+    <div data-role="view" id="powerSearch" data-layout="tabstrip-layout">
         <div data-role="header">
             <div data-role="navbar">
                 <span>Power Search</span>
                 <a data-role="button" data-rel="drawer" href="#my-drawer" class="ion" data-icon="menu" data-align="left"></a>
-                <a href="#tabstrip-edit" data-role="button" class="fa" data-icon="fa-back" data-align="left"></a>
-                <a data-role="button" data-bind="click: refresh" data-icon="delete" style="color: white" data-align="right"></a>
-                <a href="#problem-cause-multi-master" data-role="button" data-icon="add" style="color: white" data-align="right"></a>
-
-
-                
+                <a data-role="button" data-bind="click: showResult" data-icon="check" data-align="right"></a>
             </div>
         </div>
         <ul data-role="listview" data-style="inset" data-type="group">
@@ -3424,18 +3430,16 @@
                             <b>Job ID</b>
                         </div>
                         <div class="position-right">
-                            <input class="k-textbox" data-bind="value: selectItem.trId" style="background-color: rgba(244,244,244,0.95);border: hidden;width:200px;margin"  placeholder="Job ID" />
+                            <input class="textbox-no-border"  placeholder="Job ID" />
                         </div>
                     </li>
                     <li data-icon="contact">
                         <div class="position-left">
                             <b>Region</b>
                         </div>
-                        <!--<div class="position-right">
-                    <label data-bind="text: selectItem.status"></label>
-                </div>-->
+                        
                         <div class="position-right">
-                            <select id="djbstatusAssign" data-bind="visible: isAccept">
+                            <select>
                                 <option value="02" selected="selected">--- Select ---</option>
                                 <option value="03">Region 1</option>
                                 <option value="04">Region 2</option>
@@ -3446,11 +3450,9 @@
                         <div class="position-left">
                             <b>Zone</b>
                         </div>
-                        <!--<div class="position-right">
-                    <label data-bind="text: selectItem.status"></label>
-                </div>-->
+                        
                         <div class="position-right">
-                            <select id="djbstatusAssign" data-bind="visible: isAccept">
+                            <select>
                                 <option value="02" selected="selected">--- Select ---</option>
                                 <option value="03">Zone 1</option>
                                 <option value="04">Zone 2</option>
@@ -3462,52 +3464,48 @@
                             <b>Site Code</b>
                         </div>
                         <div class="position-right">
-                            <input class="k-textbox" data-bind="value: selectItem.trId" style="background-color: rgba(244,244,244,0.95);border: hidden;width:200px;margin" placeholder="Site Code" />
+                            <input class="textbox-no-border" placeholder="Site Code" />
                         </div>
                     </li>
-                    <li>
-                        <BLOCKQUOTE><b>
-<table > 
-<tr><td >Assign Date</td>
-<td><PRE>       </PRE></td>
- 
- 
-<td>To</td> 
-</tr> 
-<tr><td ><input class="k-textbox"  data-bind="value: selectItem.trId" style="background-color: rgba(244,244,244,0.95);border: hidden" placeholder="dd-mm-yyyy" /></td>
-<td><PRE>       </PRE></td>
- 
- 
-<td ><input class="k-textbox"  data-bind="value: selectItem.trId" style="background-color: rgba(244,244,244,0.95);border: hidden"  placeholder="dd-mm-yyyy" /></td> 
-</tr> 
-
-</table></b></BLOCKQUOTE>
+                    <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                        <div class="position-left">
+                            <b>Assign Date From</b>
+                        </div>
+                        <div class="position-right">
+                            <input class="textbox-no-border" placeholder="Assign Date From" />
+                        </div>
                     </li>
-                    <li>
-                        <BLOCKQUOTE><b>
-<table > 
-<tr><td >Finish Date</td>
-<td><PRE>       </PRE></td>
-<td>To</td> 
-</tr>
-<tr><td ><input class="k-textbox"  data-bind="value: selectItem.trId" style="background-color: rgba(244,244,244,0.95);border: hidden" placeholder="dd-mm-yyyy" /></td>
-<td><PRE>       </PRE></td>
- 
- 
-<td ><input class="k-textbox"  data-bind="value: selectItem.trId" style="background-color: rgba(244,244,244,0.95);border: hidden"  placeholder="dd-mm-yyyy" /></td> 
-</tr>  
-
-</table></b></BLOCKQUOTE>
+                    <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                        <div class="position-left">
+                            <b>Assign Date To</b>
+                        </div>
+                        <div class="position-right">
+                            <input class="textbox-no-border" placeholder="Assign Date To" />
+                        </div>
+                    </li>
+                    <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                        <div class="position-left">
+                            <b>Finish Date From</b>
+                        </div>
+                        <div class="position-right">
+                            <input class="textbox-no-border" placeholder="Finish Date From" />
+                        </div>
+                    </li>
+                    <li data-icon="contact" data-bind="invisible: isMoreDetail">
+                        <div class="position-left">
+                            <b>Finish Date To</b>
+                        </div>
+                        <div class="position-right">
+                            <input class="textbox-no-border" placeholder="Finish Date To" />
+                        </div>
                     </li>
                     <li data-icon="contact">
                         <div class="position-left">
                             <b>Status</b>
                         </div>
-                        <!--<div class="position-right">
-                    <label data-bind="text: selectItem.status"></label>
-                </div>-->
+                        
                         <div class="position-right">
-                            <select id="djbstatusAssign" data-bind="visible: isAccept">
+                            <select>
                                 <option value="02" selected="selected">--- Select ---</option>
                                 <option value="03">Status 1</option>
                                 <option value="04">Status 2</option>
@@ -3518,11 +3516,9 @@
                         <div class="position-left">
                             <b>Piority</b>
                         </div>
-                        <!--<div class="position-right">
-                    <label data-bind="text: selectItem.status"></label>
-                </div>-->
+                        
                         <div class="position-right">
-                            <select id="djbstatusAssign" data-bind="visible: isAccept">
+                            <select>
                                 <option value="02" selected="selected">--- Select ---</option>
                                 <option value="03">Piority 1</option>
                                 <option value="04">Piority 2</option>
@@ -3534,7 +3530,7 @@
                             <b>Title</b>
                         </div>
                         <div class="position-right">
-                            <input class="k-textbox" data-bind="value: selectItem.trId" style="background-color: rgba(244,244,244,0.95);border: hidden;width:200px;margin" placeholder="Title" />
+                            <input class="textbox-no-border" placeholder="Title" />
                         </div>
                     </li>
                     <li data-icon="contact" data-bind="invisible: isMoreDetail">
@@ -3542,13 +3538,11 @@
                             <b>Site name Thai</b>
                         </div>
                         <div class="position-right">
-                            <input class="k-textbox" data-bind="value: selectItem.trId" style="background-color: rgba(244,244,244,0.95);border: hidden;width:200px;margin" placeholder="Site name Thai" />
+                            <input class="textbox-no-border" placeholder="Site name Thai" />
                         </div>
                     </li>
                 </ul>
             </li>
-        </ul>
-        <ul data-role="listview" data-style="inset" data-type="group">
             <li>Field Engineer Condition
                 <ul>
                     <li data-icon="contact" data-bind="invisible: isMoreDetail">
@@ -3556,7 +3550,7 @@
                             <b>Assign To</b>
                         </div>
                         <div class="position-right">
-                            <input class="k-textbox" data-bind="value: selectItem.trId" style="background-color: rgba(244,244,244,0.95);border: hidden;width:200px;margin"  placeholder="Assign To" />
+                            <input class="textbox-no-border" placeholder="Assign To" />
                         </div>
                     </li>
                     <li data-icon="contact" data-bind="invisible: isMoreDetail">
@@ -3564,7 +3558,7 @@
                             <b>Assign By</b>
                         </div>
                         <div class="position-right">
-                            <input class="k-textbox" data-bind="value: selectItem.faultAlarmNumber" style="background-color: rgba(244,244,244,0.95);border: hidden;width:200px;margin" placeholder="Assign By" />
+                            <input class="textbox-no-border" placeholder="Assign By" />
                         </div>
                     </li>
                 </ul>
@@ -3579,6 +3573,7 @@
                 <a data-role="button" data-bind="click: gotoAlarmDtl" data-icon="check" data-align="right"></a>
             </div>
         </div>
+        
         <center class="job-bar" data-bind="text: alarmJobId"></center>
         <ul id="AlarmGroup" data-role="buttongroup" style="color: #74A333" data-index="0">
             <li>Site Access</li>
@@ -3912,7 +3907,7 @@
     <script id="lv-site-alarm-template" type="text/x-kendo-template">
         <label data-icon="contact">
             #if(checkFlag=="1" || checkFlag=="2"){#
-            <input type="checkbox" class="chkSiteAlarm-${siteCode}" #=c heckFlag=="2" ? checked="checked" : "" # /> #}# ${siteCode}
+            <input type="checkbox" class="chkSiteAlarm-${siteCode}" #= checkFlag=="2" ? checked="checked" : "" # /> #}# ${siteCode}
         </label>
     </script>
     <script id="multi-zone-template" type="text/x-kendo-template">
@@ -3994,6 +3989,7 @@
         <div data-role="footer">
             <div class="mytabstrip" data-role="tabstrip">
                 <!--<a href="#/" data-icon="home">Home</a>-->
+
                 <a href="#tabstrip-my" class="tMy ion" data-icon="ion-my">My</a>
                 <a href="#tabstrip-team" class="tTeam ion" data-icon="ion-team">Team</a>
                 <a href="#tabstrip-assign" class="tAssign gab" data-icon="gab-assign">Inbox</a>
@@ -4020,14 +4016,15 @@
         <ul data-role="listview" class="left-menu">
             <li class="ion balance" data-icon="ion-home"><a href="#tabstrip-assign" data-transition="none">Home</a></li>
             <li class="ion calm" data-icon="ion-multi-change"><a data-bind="click: gotoMulti" data-transition="none">Multi-Change</a></li>
-            <li class="ion assertive" data-icon="ion-power-search"><a href="#power-search" data-transition="none">Power Search</a></li>
+            <li class="ion assertive" data-icon="ion-power-search"><a href="#powerSearch" data-transition="none">Power Search</a></li>
             <li class="ion positive" data-icon="ion-setting"><a href="#Setting" data-transition="none">Setting</a></li>
             <li class="ion royal" data-icon="ion-help"><a href="#Help" data-transition="none">Help</a></li>
             <li class="ion dark" data-icon="ion-logout"><a data-bind="click: logout" data-transition="none">Log Out</a></li>
         </ul>
     </div>
-    <script src="scripts/angular/angular.min.js"></script>
-    <script src="scripts/angular/myApp.js"></script>
+    <script src="scripts/angular/angular.min.js" ></script>
+    <script src="scripts/angular/myApp.js" ></script>
+
     <!---script bottom only-->
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>

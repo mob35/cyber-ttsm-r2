@@ -1141,19 +1141,19 @@
                     var act_navi_end = ' | &nbsp;' + '<a class="linkText" href="#tabstrip-map" onclick="$(\'#endMap\').html(\'' + arr[i] + '\');  $(\'#lat_end\').val(\'' + la_site + '\'); $(\'#long_end\').val(\'' + long_site + '\'); app.mapService.viewModel.checkCal();">' +
                         '<i class="fa fa-flag-checkered"></i>&nbsp;' +
                         '</a>';
-                    var enhance_act_director = '';
-                    // var enhance_act_director = ' | &nbsp;' + '<a class="linkText" href="#tabstrip-map" onclick="$(\'#endMap\').html(\'' + arr[i] + '\');  $(\'#lat_end\').val(\'' + la_site + '\'); $(\'#long_end\').val(\'' + long_site + '\'); app.mapService.viewModel.checkCal();">' + 
-                    //     '<i class="fa iconTTSM-compass2"></i>' + '</a>';
+                    //var enhance_act_director = '';
+                    var enhance_act_director = ' | &nbsp;' + '<a class="linkText" href="#tabstrip-map" onclick="$(\'#endMap\').html(\'' + arr[i] + '\');  $(\'#lat_end\').val(\'' + la_site + '\'); $(\'#long_end\').val(\'' + long_site + '\'); app.mapService.viewModel.checkCal();">' + 
+                        '<i class="fa iconTTSM-compass2"></i>' + '</a>';
                     var enhance_act_get_alarm = ' | &nbsp;' + '<a class="linkText fa" href="#SiteAlarmDtl" onclick="app.mapService.viewModel.gotoAlarmDtl(\'' + arr[i] + '\');">' +
                         '<i class="fa iconTTSM-notification6 assertive"></i>' +
                         '</a>';
-                    // var enhance_act_get_job = ' | &nbsp;' + '<i class="fa fa-file"></i>';
-                    var enhance_act_get_job = '';
+                    var enhance_act_get_job = ' | &nbsp;' + '<i class="fa fa-file"></i>';
+                    //var enhance_act_get_job = '';
                     var enhance_act_get_name = 'Name TH :' + '<br>' + 'Name EN :';
                     var enhance_act_get_lalan = 'Lat Long :' + '<a class="linkText" onclick="app.mapService.viewModel.toClipboard(\'' + la_site + ',' + long_site + '\');"><span class="lalng">' + la_site + ',' + long_site + '</span></a>';
                     inFor = inFor + '<div  data-role="scroller" class="checkPin_' + arrT[i] + '' + arrA[i] + '_show"> &nbsp;&nbsp; <img src="' + imageName + '" class="tBalloon icon_result_width" /> ' + arr[i] + '' +
                         ' &nbsp;&nbsp;' + act_navi_begin + act_navi_end +
-                        enhance_act_director + enhance_act_get_alarm + enhance_act_get_job + '<hr class="hr_head">' + enhance_act_get_name + '<br>' + enhance_act_get_lalan + '<br><hr class="hr_" size="1"></div>';
+                        enhance_act_director + enhance_act_get_alarm + enhance_act_get_job + '<hr class="hr_head">' + enhance_act_get_name + '<br>' + enhance_act_get_lalan + '<br><br></div>';
                 }
             }
             var tx = '<div style="min-width:200px; overflow:auto; height:auto;">' + inFor + '</div>';

@@ -1283,3 +1283,6 @@ s}
     padding: 3px;
 
 }
+.textbox-no-border{
+    background-color: rgba(244,244,244,0.95);border: hidden;width:200px;
+}
