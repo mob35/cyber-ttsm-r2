@@ -16,10 +16,7 @@
  
  timeout: 3600000,
  pinCluster: false,
-<<<<<<< HEAD
- isMorkupData: false,
-=======
- isMorkupData: true
->>>>>>> 4f16c8f1ff241c7885daf0609226b8782d7ef0f7
+ isMorkupData: false
+
  };
  })(window);
