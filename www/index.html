@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title></title>
     <meta charset="utf-8" />
@@ -33,7 +34,7 @@
     </style>-->
 </head>
 
-<body id="TTSApp" >
+<body id="TTSApp">
     <script id="dateTemplate" type="text/x-kendo-template">
         #:format_time_date(selectItem.initiateDate)#
     </script>
@@ -51,7 +52,6 @@
                     <div>
                         <img id="Img1" src="styles/images/ttsLogo.png" style="width: 80%" />
                     </div>
-
                     <form id="login-form" data-bind="events: { keyup: checkEnter }">
                         <ul data-role="listview" data-style="inset">
                             <li>
@@ -138,7 +138,6 @@
             </li>
         </ul>
     </div>
-
     <div data-role="view" id="Re-AllocateWithStatus" data-model="app.reallocateService.viewModel" data-layout="tabstrip-layout" data-show="app.reallocateService.showlistWithStatus">
         <div data-role="header">
             <div data-role="navbar">
@@ -270,7 +269,7 @@
             </a>
     </script>
     <!--My Team-->
-    <div data-title="My Team" data-role="view"  id="tabstrip-team" data-init="app.myTeamService.init" data-show="app.myTeamService.show" data-hide="app.myTeamService.hide" data-model="app.myTeamService.viewModel" data-layout="tabstrip-layout">
+    <div data-title="My Team" data-role="view" id="tabstrip-team" data-init="app.myTeamService.init" data-show="app.myTeamService.show" data-hide="app.myTeamService.hide" data-model="app.myTeamService.viewModel" data-layout="tabstrip-layout">
         <!--Header-->
         <div data-role="header">
             <div data-role="navbar">
@@ -289,8 +288,6 @@
         <span>Last Updated :
                 <span data-bind="text: lastupdateteam"></span>
         </span>
-
-
         <!--<i class="fa fa-refresh" style="color: green; font-size: 1.4em" data-bind="click: refresh"></i>-->
         <ul data-role="listview" data-style="inset" style="background-color: rgba(244,244,244,0.95)">
             <li>
@@ -323,7 +320,7 @@
             </div>
              -->
         <div data-role="scrollview" data-page="0" data-content-height="100%" data-pager-overlay="false">
-            <div class="slideview"  data-role="page">
+            <div class="slideview" data-role="page">
                 <ul id="lvMyTeam"></ul>
             </div>
             <div class="slideview" data-role="page">
@@ -361,7 +358,6 @@
         <div class="position-right">
             <div style="width:50px;display:inline-block" data-userid="${userId}" data-username="${fullName}" data-statusid="01" data-statusname="Assign">
                 <a>
-
                     <i class="fa-2x balance iconTTSM2-as" data-userid="${userId}" data-username="${fullName}" data-statusid="01" data-statusname="Assign" />&nbsp;&nbsp;${sumAssing}
                 </a>
             </div>
@@ -488,7 +484,7 @@
         <div style="height:10px">&nbsp;</div>
         <!-- <ul id="lvMy"></ul> -->
         <div data-role="scrollview" data-page="0" data-content-height="100%" data-pager-overlay="false">
-            <div class="slideviewMy"  data-role="page">
+            <div class="slideviewMy" data-role="page">
                 <ul id="lvMy"></ul>
             </div>
             <div class="slideviewMy" data-role="page">
@@ -505,7 +501,6 @@
             <ul id="lvTeam"></ul>
             <!--</div>-->
         </div>
-
     </div>
     <script id="team-template" type="text/x-kendo-template">
         <div>
@@ -536,7 +531,6 @@
             <i class="fa fa-male"></i>&nbsp;${fullName}
         </div>
         <div class="position-right">
-            
             <div style="width:50px;display:inline-block">
                 <i class="fa-2x balance iconTTSM2-as"></i>&nbsp;&nbsp;${sumAssing}
             </div>
@@ -555,7 +549,6 @@
             <div style="width:50px;display:inline-block">
                 <i class="fa-2x balance iconTTSM2-wd"></i>&nbsp;&nbsp;${sumWaitDetail}
             </div>
-            
         </div>
     </script>
     <!--Member View-->
@@ -2936,7 +2929,6 @@
             </div>
         </div>
         <ul data-role="listview" data-style="inset" data-type="group">
-            
             <li>Field Engineer
                 <ul>
                     <li>
@@ -3411,36 +3403,31 @@
             </li> -->
         </ul>
     </div>
-    
-    
-    <div id="powerSearch" data-role="view" data-layout="tabstrip-layout" data-model="app.powerSearchService.viewModel"  data-init="app.powerSearchService.init" data-show="app.powerSearchService.show" data-hide="app.powerSearchService.hide">
+    <div id="powerSearch" data-role="view" data-layout="tabstrip-layout" data-model="app.powerSearchService.viewModel" data-init="app.powerSearchService.init" data-show="app.powerSearchService.show" data-hide="app.powerSearchService.hide">
         <div data-role="header">
             <div data-role="navbar">
                 <span>Power Search</span>
                 <a data-role="button" data-rel="drawer" href="#my-drawer" class="ion" data-icon="menu" data-align="left"></a>
-                <a data-role="button" data-bind="click: showResult" data-icon="check" data-align="right" ></a>
+                <a data-role="button" data-bind="click: showResult" data-icon="check" data-align="right"></a>
             </div>
         </div>
         <ul data-role="listview" data-style="inset" data-type="group">
             <li>Job Condition
                 <ul>
-
                     <li data-icon="contact" data-bind="invisible: isMoreDetail">
                         <div class="position-left">
                             <b>Job ID</b>
                         </div>
                         <div class="position-right">
-                            <input class="textbox-no-border"  placeholder="Job ID" data-bind="value: jobid"  />
+                            <input class="textbox-no-border" placeholder="Job ID" data-bind="value: jobid" />
                         </div>
                     </li>
                     <li data-icon="contact">
                         <div class="position-left">
                             <b>Region</b>
                         </div>
-                        
-                        <div class="position-right" >
-                            <select id="ddlregion" style="width: 220px;" >
-                                
+                        <div class="position-right">
+                            <select id="ddlregion" style="width: 220px;">
                             </select>
                         </div>
                     </li>
@@ -3448,10 +3435,8 @@
                         <div class="position-left">
                             <b>Zone</b>
                         </div>
-                        
                         <div class="position-right">
                             <select id="ddlzone" style="width: 220px;">
-
                             </select>
                         </div>
                     </li>
@@ -3499,10 +3484,8 @@
                         <div class="position-left">
                             <b>Status</b>
                         </div>
-                        
                         <div class="position-right">
                             <select id="ddlstatus" style="width: 220px;">
-                                
                             </select>
                         </div>
                     </li>
@@ -3510,10 +3493,8 @@
                         <div class="position-left">
                             <b>Piority</b>
                         </div>
-                        
                         <div class="position-right">
                             <select id="ddlpiority" style="width: 220px;">
-                                
                             </select>
                         </div>
                     </li>
@@ -3565,7 +3546,6 @@
                 <a data-role="button" data-bind="click: gotoAlarmDtl" data-icon="check" data-align="right"></a>
             </div>
         </div>
-        
         <center class="job-bar" data-bind="text: alarmJobId"></center>
         <ul id="AlarmGroup" data-role="buttongroup" style="color: #74A333" data-index="0">
             <li>Site Access</li>
@@ -3899,7 +3879,7 @@
     <script id="lv-site-alarm-template" type="text/x-kendo-template">
         <label data-icon="contact">
             #if(checkFlag=="1" || checkFlag=="2"){#
-            <input type="checkbox" class="chkSiteAlarm-${siteCode}" #= checkFlag=="2" ? checked="checked" : "" # /> #}# ${siteCode}
+            <input type="checkbox" class="chkSiteAlarm-${siteCode}" #=c heckFlag=="2" ? checked="checked" : "" # /> #}# ${siteCode}
         </label>
     </script>
     <script id="multi-zone-template" type="text/x-kendo-template">
@@ -3981,7 +3961,6 @@
         <div data-role="footer">
             <div class="mytabstrip" data-role="tabstrip">
                 <!--<a href="#/" data-icon="home">Home</a>-->
-
                 <a href="#tabstrip-my" class="tMy ion" data-icon="ion-my">My</a>
                 <a href="#tabstrip-team" class="tTeam ion" data-icon="ion-team">Team</a>
                 <a href="#tabstrip-assign" class="tAssign gab" data-icon="gab-assign">Inbox</a>
@@ -4014,9 +3993,8 @@
             <li class="ion dark" data-icon="ion-logout"><a data-bind="click: logout" data-transition="none">Log Out</a></li>
         </ul>
     </div>
-    <script src="scripts/angular/angular.min.js" ></script>
-    <script src="scripts/angular/myApp.js" ></script>
-
+    <script src="scripts/angular/angular.min.js"></script>
+    <script src="scripts/angular/myApp.js"></script>
     <!---script bottom only-->
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
