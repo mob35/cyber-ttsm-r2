@@ -2214,7 +2214,12 @@
                         dataValue.allItemList = allItemList;
 
 
+
                         that.set("returnUrl", "#tabstrip-accept");
+
+                        //jigkoh comment enhance submit more re-load in this page
+                        //that.set("returnUrl", "#tabstrip-accept");
+
 
                         console.log("update status");
                         that.exeChangeStatusJob(dataValue);
@@ -2312,7 +2317,7 @@
                                 //
                             } else {
 
-
+                                
 
                                 //app.jobService.viewModel.loadacceptlist();
                                 navigator.notification.alert(dataValue.allItemList[0].jbList[0].jobId,
