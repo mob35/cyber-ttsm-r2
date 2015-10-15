@@ -2090,6 +2090,157 @@
                 }
             }
         },
+        changeStatusMore: function() {
+            //console.log("########### changeStatus ######## ");
+            var that = app.jobService.viewModel;
+            var selectItem = that.get("selectItem");
+            var jobId = selectItem.jobId;
+            var selectedStatus = that.get("selectedStatus");
+            var flag = "true"
+
+
+            var isOffline = app.loginService.viewModel.get("isOffline");
+            if (isOffline && selectedStatus != "05") {
+                navigator.notification.alert("offline \n You can report job only",
+                    function() {}, "Internet Connection", 'OK');
+
+            } else {
+                if (selectItem.aamShow == "Y") {
+
+                    if (selectItem.statusId == "05") {
+
+                        navigator.notification.confirm("Do you want to continue?",
+                            function(i) {
+                                if (i == 1) {
+                                    if (app.changeStatusService.checkReq(selectedStatus)) {
+
+                                        var allItemList = [];
+                                        var itemList = app.changeStatusService.createItem(jobId, selectedStatus);
+
+                                        allItemList.push(itemList);
+
+                                        var dataValue = {};
+                                        dataValue.token = localStorage.getItem("token");
+                                        dataValue.version = '2';
+                                        dataValue.userId = JSON.parse(localStorage.getItem("profileData")).userId;
+                                        dataValue.allItemList = allItemList;
+
+
+                                        that.set("returnUrl", "#tabstrip-accept");
+
+
+                                        that.exeChangeStatusJob(dataValue);
+                                    }
+                                }
+                            }, "This job will be changed to Wait for report \n because there is no Move Equipment Document");
+
+                    } else if (selectedStatus == "05") {
+
+
+
+                        navigator.notification.confirm("Do you want to continue ?",
+                            function(i) {
+                                if (i == 1) {
+                                    if (app.changeStatusService.checkReq(selectedStatus)) {
+
+                                        var allItemList = [];
+                                        var itemList = app.changeStatusService.createItem(jobId, selectedStatus);
+
+                                        allItemList.push(itemList);
+
+                                        var dataValue = {};
+                                        dataValue.token = localStorage.getItem("token");
+                                        dataValue.version = '2';
+                                        dataValue.userId = JSON.parse(localStorage.getItem("profileData")).userId;
+                                        dataValue.allItemList = allItemList;
+
+
+                                        that.set("returnUrl", "#tabstrip-accept");
+
+
+                                        that.exeChangeStatusJob(dataValue);
+                                    } else {
+                                        //navigator.notification.alert("Please select problem solve.",
+                                        //  function() {}, "Change Status Job : Save incomplete!", 'OK');
+                                    }
+                                } else {
+                                    app.jobService.viewModel.hideLoading();
+                                }
+                            }, "This job will be changed to Wait for report \n because there is no Move Equipment Document");
+
+
+
+
+                    } else {
+
+                        if (app.changeStatusService.checkReq(selectedStatus)) {
+
+
+                            var allItemList = [];
+                            var itemList = app.changeStatusService.createItem(jobId, selectedStatus);
+
+                            allItemList.push(itemList);
+
+                            var dataValue = {};
+                            dataValue.token = localStorage.getItem("token");
+                            dataValue.version = '2';
+                            dataValue.userId = JSON.parse(localStorage.getItem("profileData")).userId;
+                            dataValue.allItemList = allItemList;
+
+
+                            that.set("returnUrl", "#tabstrip-accept");
+
+                            console.log('exeChangeStatusJob');
+                            that.exeChangeStatusJob(dataValue);
+                        } else {
+                            //navigator.notification.alert("Please select problem solve.",
+                            //  function() {}, "Change Status Job : Save incomplete!", 'OK');
+                        }
+                    }
+
+                } else {
+
+                    if (app.changeStatusService.checkReq(selectedStatus)) {
+
+                        var allItemList = [];
+                        var itemList = app.changeStatusService.createItem(jobId, selectedStatus);
+
+                        allItemList.push(itemList);
+
+                        var dataValue = {};
+                        dataValue.token = localStorage.getItem("token");
+                        dataValue.version = '2';
+                        dataValue.userId = JSON.parse(localStorage.getItem("profileData")).userId;
+                        dataValue.allItemList = allItemList;
+
+
+                        that.set("returnUrl", "#tabstrip-accept");
+
+                        console.log("update status");
+                        that.exeChangeStatusJob(dataValue);
+                    } else {
+                        //navigator.notification.alert("Please select problem solve.",
+                        //  function() {}, "Change Status Job : Save incomplete!", 'OK');
+                    }
+                }
+
+                var selectNewSite = app.siteAccessService.viewModel.get("selectNewSite");
+                var mnimssiteIds = [];
+                var isMnimssiteIdExist = false;
+                if (selectNewSite != null && selectNewSite != undefined) {
+                    selectNewSite.fetch(function() {
+                        var data = selectNewSite.data();
+                        for (var i = 0; i < data.length; i++) {
+                            mnimssiteIds.push(data[i].siteId);
+                            isMnimssiteIdExist = true;
+                        }
+                        if (isMnimssiteIdExist) {
+                            app.siteAccessService.viewModel.createSiteAccess(mnimssiteIds);
+                        }
+                    })
+                }
+            }
+        },
         exeChangeStatusJob: function(dataValue) {
             //console.log("########### exeChangeStatusJob ######## ");
 
