@@ -109,6 +109,11 @@
                 <a data-role="button" href="#AssignActionSheet" data-rel="actionsheet" class="fa" data-icon="fa-action" data-align="right"></a>-->
             </div>
         </div>
+        <div>
+            <form class="search">
+                <input type="search" placeholder="Search..." autocomplete="off">
+            </form>
+        </div>
         <div style="height:10px">&nbsp;</div>
         <span>Last Updated :
                 <span data-bind="text: lastupdatereallocate"></span>
@@ -1010,12 +1015,17 @@
                 <a data-icon="search" data-role="button" data-align="right" data-bind="click: onSearch"></a>
             </div>
         </div>
-        <div class="jb-search-wrap" data-bind="visible: isSearch">
+        <div>
+            <form class="search">
+                <input type="search" placeholder="Search..." autocomplete="off">
+            </form>
+        </div>
+        <!-- <div class="jb-search-wrap" data-bind="visible: isSearch">
             <form onsubmit="return false;">
                 <input class="jb-address" type="search" data-bind="value: searchtxt" placeholder="JB Id" />
                 <input class="jb-search" type="submit" value="" data-bind="click: gotoDetailSearch" />
             </form>
-        </div>
+        </div> -->
         <div style="height:10px">&nbsp;</div>
         <span>Last Updated :
                 <span data-bind="text: lastupdateassign"></span>
@@ -1155,12 +1165,17 @@
                 <span>Active Box</span>
             </div>
         </div>
-        <div class="jb-search-wrap" data-bind="visible: isSearch">
+        <div>
+            <form class="search">
+                <input type="search" placeholder="Search..." autocomplete="off">
+            </form>
+        </div>
+        <!--  <div class="jb-search-wrap" data-bind="visible: isSearch">
             <form onsubmit="return false;">
                 <input class="jb-address" type="search" data-bind="value: searchtxt" placeholder="JB Id" />
                 <input class="jb-search" type="submit" value="" data-bind="click: gotoDetailSearch" />
             </form>
-        </div>
+        </div> -->
         <div style="height:10px">&nbsp;</div>
         <span>Last Updated :
                 <span data-bind="text: lastupdateaccept"></span>
@@ -1648,6 +1663,7 @@
                     </div>
                     <div class="position-right">
                         <label data-bind="text: selectItem.title"></label>
+                        13LF-3SCPCWD02H-Fepalarm can't send alaem to l2000
                     </div>
                 </li>
                 <li data-icon="contact">
@@ -1656,6 +1672,7 @@
                     </div>
                     <div class="position-right">&nbsp;
                         <label data-bind="text: selectItem.status"></label>
+                        Waiting for Report
                     </div>
                 </li>
                 <li data-icon="contact">
@@ -1665,6 +1682,7 @@
                     <div class="position-right">
                         <img data-bind="attr: { src: imageSrc}" class="image_icon" />&nbsp;
                         <label data-bind="text: selectItem.priorityName"></label>
+                        <img src='../images/Minor2.png' width="20" height="20"> Critical
                     </div>
                 </li>
                 <li data-icon="contact">
@@ -1673,6 +1691,7 @@
                     </div>
                     <div class="position-right">
                         <label data-bind="text: formatInitialDate"></label>
+                        07-January-2014 22:23:00
                     </div>
                 </li>
                 <li data-icon="contact">
@@ -1681,6 +1700,7 @@
                     </div>
                     <div class="position-right">
                         <label data-bind="text: formatFinishDate"></label>
+                        08-January-2012 01:23:00
                     </div>
                 </li>
                 <li data-icon="contact">
@@ -1689,6 +1709,7 @@
                     </div>
                     <div class="position-right">
                         <label data-bind="text: selectItem.assignByName"></label>
+                        Hansa Saensing
                     </div>
                 </li>
                 <li data-icon="contact">
@@ -1697,6 +1718,7 @@
                     </div>
                     <div class="position-right">
                         <label data-bind="text: selectItem.assignToName"></label>
+                        Hansa Saensing
                     </div>
                 </li>
                 <li data-icon="contact">
@@ -1705,21 +1727,25 @@
                     </div>
                     <div class="position-right">
                         <label data-bind="text: selectItem.systemName"></label>
+                        GSM900(All),GSM1800
                     </div>
                 </li>
                 <li data-icon="contact">
                     <a data-bind="click: goSiteAssess">
-                        <b>Site Access</b> (
+                        <b>Site Access</b> ( 3
                         <label class="job-bind" data-bind="text: cntSiteAccess"></label>
                         )
                     </a>
                 </li>
                 <li data-icon="contact">
                     <a data-bind="click: goSiteAffect">
-                        <b>Site Affect</b> (
+                        <b>Site Affect</b> ( 1
                         <label class="job-bind" data-bind="text: cntSiteAffect"></label>
                         )
                     </a>
+                </li>
+                <li><b style="color: Grey;font-size: 0.5em">Task Description : 26540 RF Unit AC Input Power Failure Cabinet No.=0, Subrack No.=80,Slot No.=0, Board type=MRRU(Active>15min)</b>
+                    </p>
                 </li>
             </ul>
             <ul data-role="listview" data-style="inset" style="display: none">
@@ -1775,14 +1801,14 @@
                     )
                 </a>
                 </li>
-                <li data-bind="visible: isProblemCM" class="job-bind">
+                <!-- <li data-bind="visible: isProblemCM" class="job-bind">
                     <a href="#job-problem-cause-multi"><b>Problem Cause</b><font style="color: red">*</font>
                     (
                         <label data-bind="text: cntProblemCause" class="job-bind">
                         </label>
                     )
                 </a>
-                </li>
+                </li> -->
                 <li data-bind="visible: isProblemS" class="job-bind">
                     <a href="#job-problem-solve"><b>Problem Solve</b>
                     (
@@ -1791,12 +1817,27 @@
                     )
                 </a>
                 </li>
-                <li data-bind="visible: isProblemSR" class="job-bind">
+                <!-- <li data-bind="visible: isProblemSR" class="job-bind">
                     <a href="#job-problem-solve-radio"><b>&nbsp;&nbsp;&nbsp;&nbsp;Permanent/Temporary</b>
                 </a>
                 </li>
                 <li data-bind="visible: isProcess" class="job-bind">
                     <a href="#job-problem-solve-process"><b>Process</b></a>
+                </li> -->
+                <!--   <li data-bind="visible: isReasonDesc" class="job-bind">
+                    <div class="position-right">
+                        <label data-icon="contact" data-bind="text: selectItem.reasonOverdueDesc"></label>
+                    </div>
+                </li> -->
+                <li data-icon="contact" class="job-bind" data-bind="visible: isReportType">
+                    <label>
+                        <b>Report Deail</b>
+                        <font style="color: red" data-bind="visible: isReportType">*</font>
+                    </label>
+                    <div class="position-right">
+                        <p data-bind="text: selectItem.oldReportDetail"></p>
+                        <textarea placeholder="Input Report Detail..." class="k-textbox" style="height: 60px" data-bind="value: selectItem.report"></textarea>
+                    </div>
                 </li>
                 <li data-bind="visible: isReason" class="job-bind">
                     <a href="#reason-over-due">
@@ -1804,19 +1845,12 @@
                         <font style="color: red">*</font>
                     </a>
                 </li>
-                <li data-bind="visible: isReasonDesc" class="job-bind">
-                    <div class="position-right">
-                        <label data-icon="contact" data-bind="text: selectItem.reasonOverdueDesc"></label>
-                    </div>
-                </li>
                 <li data-icon="contact" class="job-bind" data-bind="visible: isReportType">
                     <label>
-                        <b>Report Detail</b>
-                        <font style="color: red" data-bind="visible: isReportType">*</font>
+                        Remark Over Due
                     </label>
                     <div class="position-right">
-                        <p data-bind="text: selectItem.oldReportDetail"></p>
-                        <textarea placeholder="Input Report Detail..." class="k-textbox" style="height: 50px" data-bind="value: selectItem.report"></textarea>
+                        <textarea maxlength="1000" placeholder="Input Remark Over Due..." class="k-textbox" style="height: 60px" data-bind="value: selectItem.report"></textarea>
                     </div>
                 </li>
                 <li data-icon="contact" data-bind="invisible: isMoreDetail">
@@ -3380,7 +3414,6 @@
         <ul data-role="listview" id="lvZoneFilter" data-style="inset">
         </ul>
     </div>
-    <!--setting-->
     <div data-role="view" id="Setting" data-layout="tabstrip-layout">
         <div data-role="header">
             <div data-role="navbar">

@@ -2213,8 +2213,13 @@
                         dataValue.userId = JSON.parse(localStorage.getItem("profileData")).userId;
                         dataValue.allItemList = allItemList;
 
+
+
+                        that.set("returnUrl", "#tabstrip-accept");
+
                         //jigkoh comment enhance submit more re-load in this page
                         //that.set("returnUrl", "#tabstrip-accept");
+
 
                         console.log("update status");
                         that.exeChangeStatusJob(dataValue);
