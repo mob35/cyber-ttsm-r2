@@ -1169,7 +1169,11 @@
             <form class="search">
                 <input type="search" placeholder="Search..." autocomplete="off">
             </form>
+            <ul id="filterable-listview"></ul>
         </div>
+        <script type="text/x-kendo-tmpl" id="mobile-listview-filtering-template">
+            
+        </script>
         <!--  <div class="jb-search-wrap" data-bind="visible: isSearch">
             <form onsubmit="return false;">
                 <input class="jb-address" type="search" data-bind="value: searchtxt" placeholder="JB Id" />
@@ -1663,7 +1667,6 @@
                     </div>
                     <div class="position-right">
                         <label data-bind="text: selectItem.title"></label>
-                        13LF-3SCPCWD02H-Fepalarm can't send alaem to l2000
                     </div>
                 </li>
                 <li data-icon="contact">
@@ -1672,7 +1675,6 @@
                     </div>
                     <div class="position-right">&nbsp;
                         <label data-bind="text: selectItem.status"></label>
-                        Waiting for Report
                     </div>
                 </li>
                 <li data-icon="contact">
@@ -1682,7 +1684,6 @@
                     <div class="position-right">
                         <img data-bind="attr: { src: imageSrc}" class="image_icon" />&nbsp;
                         <label data-bind="text: selectItem.priorityName"></label>
-                        <img src='../images/Minor2.png' width="20" height="20"> Critical
                     </div>
                 </li>
                 <li data-icon="contact">
@@ -1691,7 +1692,6 @@
                     </div>
                     <div class="position-right">
                         <label data-bind="text: formatInitialDate"></label>
-                        07-January-2014 22:23:00
                     </div>
                 </li>
                 <li data-icon="contact">
@@ -1700,7 +1700,6 @@
                     </div>
                     <div class="position-right">
                         <label data-bind="text: formatFinishDate"></label>
-                        08-January-2012 01:23:00
                     </div>
                 </li>
                 <li data-icon="contact">
@@ -1709,7 +1708,6 @@
                     </div>
                     <div class="position-right">
                         <label data-bind="text: selectItem.assignByName"></label>
-                        Hansa Saensing
                     </div>
                 </li>
                 <li data-icon="contact">
@@ -1718,7 +1716,6 @@
                     </div>
                     <div class="position-right">
                         <label data-bind="text: selectItem.assignToName"></label>
-                        Hansa Saensing
                     </div>
                 </li>
                 <li data-icon="contact">
@@ -1727,24 +1724,23 @@
                     </div>
                     <div class="position-right">
                         <label data-bind="text: selectItem.systemName"></label>
-                        GSM900(All),GSM1800
                     </div>
                 </li>
                 <li data-icon="contact">
                     <a data-bind="click: goSiteAssess">
-                        <b>Site Access</b> ( 3
+                        <b>Site Access</b> (
                         <label class="job-bind" data-bind="text: cntSiteAccess"></label>
                         )
                     </a>
                 </li>
                 <li data-icon="contact">
                     <a data-bind="click: goSiteAffect">
-                        <b>Site Affect</b> ( 1
+                        <b>Site Affect</b> (
                         <label class="job-bind" data-bind="text: cntSiteAffect"></label>
                         )
                     </a>
                 </li>
-                <li><b style="color: Grey;font-size: 0.5em">Task Description : 26540 RF Unit AC Input Power Failure Cabinet No.=0, Subrack No.=80,Slot No.=0, Board type=MRRU(Active>15min)</b>
+                <li><b style="color: Grey;font-size: 0.5em">Task Description : </b>
                     </p>
                 </li>
             </ul>
@@ -1847,10 +1843,10 @@
                 </li>
                 <li data-icon="contact" class="job-bind" data-bind="visible: isReportType">
                     <label>
-                        Remark Over Due
+                        <b>Remark Over Due</b>
                     </label>
                     <div class="position-right">
-                        <textarea maxlength="1000" placeholder="Input Remark Over Due..." class="k-textbox" style="height: 60px" data-bind="value: selectItem.report"></textarea>
+                        <textarea maxlength="1000" placeholder="Input Remark Over Due..." class="k-textbox" style="height: 60px" data-bind="value: selectItem.Remark"></textarea>
                     </div>
                 </li>
                 <li data-icon="contact" data-bind="invisible: isMoreDetail">
@@ -4073,6 +4069,7 @@
     <script src="scripts/siteAccess.js"></script>
     <script src="scripts/reasonOverDue.js"></script>
     <script src="scripts/powerSearch.js"></script>
+    <script src="scripts/accept.js"></script>
     <!--end-->
     <script src="scripts/dashboard.js"></script>
     <script src="scripts/dashboardFilter.js"></script>
