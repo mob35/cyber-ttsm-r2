@@ -311,20 +311,16 @@
         assignTo: "",
         assignBy: "",
         setTmp: function() {
-
             // alert("Region");
             // ddlregion
             if (kendo.ui.DropDownList) {
                 $("#ddlregion").kendoDropDownList({
-
                     change: function(e) {
                         if (e.sender.selectedIndex != 0) {
                             indexRegion = e.sender.selectedIndex;
                             // ddlzone
                             if (kendo.ui.DropDownList) {
                                 $("#ddlzone").kendoDropDownList({
-
-                                    //optionLabel: "Select a team...",
                                     dataTextField: "zoneDesc",
                                     dataValueField: "zoneId",
                                     optionLabel: "---Select---",
@@ -332,37 +328,12 @@
                                         transport: {
                                             read: function(operation) {
                                                 if (app.configService.isMorkupData) {
-                                                    var response = _getRegionListTTSME.regions[indexRegion -1];
+                                                    var response = _getRegionListTTSME.regions[indexRegion - 1];
                                                     operation.success(response);
                                                 } else {
-                                                    $.ajax({ //using jsfiddle's echo service to simulate remote data loading
-                                                        beforeSend: app.loginService.viewModel.checkOnline,
-                                                        regionId: "POST",
-                                                        timeout: 180000,
-                                                        url: app.configService.serviceUrl + 'post-json.service?s=transaction-service&o=getRegionListTTSME.json',
-                                                        data: JSON.stringify({
-                                                            "token": localStorage.getItem("token"),
-                                                            "version": "2"
-                                                        }),
-                                                        dataType: "json",
-                                                        contentType: 'application/json',
-                                                        success: function(response) {
-
-                                                            operation.success(response);
-
-                                                        },
-                                                        error: function(xhr, error) {
-                                                            if (!app.ajaxHandlerService.error(xhr, error)) {
-
-                                                                navigator.notification.alert(xhr.status + ' ' + error,
-                                                                    function() {}, "get zones", 'OK');
-                                                            }
-                                                            return;
-                                                        }
-                                                    });
-
+                                                    var response = _getRegionListTTSME.regions[indexRegion - 1];
+                                                    operation.success(response);
                                                 }
-
                                             }
                                         },
                                         schema: {
@@ -375,14 +346,12 @@
                             if (kendo.ui.DropDownList) {
                                 $("#ddlzone").kendoDropDownList();
                                 var dropdownlist = $("#ddlzone").data("kendoDropDownList");
-
                                 dropdownlist.select(0);
                                 dropdownlist.destroy();
                             }
                         }
                     },
 
-                    //optionLabel: "Select a team...",
                     dataTextField: "regionNameEn",
                     dataValueField: "regionId",
                     optionLabel: "---Select---",
@@ -391,104 +360,74 @@
                             read: function(operation) {
                                 if (app.configService.isMorkupData) {
                                     var response = _getRegionListTTSME;
-
-                                    operation.success(response);
-                                } else {
-                                    $.ajax({ //using jsfiddle's echo service to simulate remote data loading
-                                        beforeSend: app.loginService.viewModel.checkOnline,
-                                        regionId: "POST",
-                                        timeout: 180000,
-                                        url: app.configService.serviceUrl + 'post-json.service?s=transaction-service&o=getRegionListTTSME.json',
-                                        data: JSON.stringify({
-                                            "token": localStorage.getItem("token"),
-                                            "version": "2"
-                                        }),
-                                        dataType: "json",
-                                        contentType: 'application/json',
-                                        success: function(response) {
-
-                                            operation.success(response);
-
-                                        },
-                                        error: function(xhr, error) {
-                                            if (!app.ajaxHandlerService.error(xhr, error)) {
-
-
-                                                navigator.notification.alert(xhr.status + ' ' + error,
-                                                    function() {}, "get regions", 'OK');
-                                            }
-                                            return;
-                                        }
-                                    });
-
-                                }
-
-                            }
-                        },
-                        schema: {
-                            data: "regions"
-                        }
-
-                    })
-                });
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            // ddlstatus
-            if (kendo.ui.DropDownList) {
-                $("#ddlstatus").kendoDropDownList({
-
-                    //optionLabel: "Select a team...",
-                    dataTextField: "status",
-                    dataValueField: "jbStatusId",
-                    optionLabel: "---Select---",
-                    dataSource: new kendo.data.DataSource({
-                        transport: {
-                            read: function(operation) {
-
-                                // alert("init");
-
-                                if (app.configService.isMorkupData) {
-                                    var response = _getJobStatusTTSME;
-
                                     operation.success(response);
                                 } else {
                                     $.ajax({ //using jsfiddle's echo service to simulate remote data loading
                                         beforeSend: app.loginService.viewModel.checkOnline,
                                         type: "POST",
                                         timeout: 180000,
-                                        url: app.configService.serviceUrl + 'post-json.service?s=transaction-service&o=getRegionListTTSME.json',
+                                        url: app.configService.serviceUrl + 'post-json.service?s=master-service&o=getRegionListTTSME.json',
                                         data: JSON.stringify({
                                             "token": localStorage.getItem("token"),
+                                            "userId": JSON.parse(localStorage.getItem("profileData")).userId,
                                             "version": "2"
                                         }),
                                         dataType: "json",
                                         contentType: 'application/json',
                                         success: function(response) {
+                                            _getRegionListTTSME = response;
+                                            operation.success(response);
+                                        },
+                                        error: function(xhr, error) {
+                                            if (!app.ajaxHandlerService.error(xhr, error)) {
+                                                navigator.notification.alert(xhr.status + ' ' + error,
+                                                    function() {}, "get regions", 'OK');
+                                            }
+                                            return;
+                                        }
+                                    });
+                                }
+                            }
+                        },
+                        schema: {
+                            data: "regions"
+                        }
+                    })
+                });
+            }
+            // ddlstatus
+            if (kendo.ui.DropDownList) {
+                $("#ddlstatus").kendoDropDownList({
+                    dataTextField: "status",
+                    dataValueField: "jbStatusId",
+                    optionLabel: "---Select---",
+                    dataSource: new kendo.data.DataSource({
+                        transport: {
+                            read: function(operation) {
+                                if (app.configService.isMorkupData) {
+                                    var response = _getJobStatusTTSME;
+                                    operation.success(response);
+                                } else {
+                                    $.ajax({ //using jsfiddle's echo service to simulate remote data loading
+                                        beforeSend: app.loginService.viewModel.checkOnline,
+                                        type: "POST",
+                                        timeout: 180000,
+                                        url: app.configService.serviceUrl + 'post-json.service?s=master-service&o=getJobStatus.json',
+                                        data: JSON.stringify({
+                                            "token": localStorage.getItem("token"),
+                                            "userId": JSON.parse(localStorage.getItem("profileData")).userId,
+                                            "version": "2"
+                                        }),
+                                        dataType: "json",
+                                        contentType: 'application/json',
+                                        success: function(response) {
+                                            _getJobStatusTTSME = response;
                                             //store response
                                             //localStorage.setItem("regionData", JSON.stringify(response));
                                             //pass the pass response to the DataSource
-
                                             //navigator.notification.alert(JSON.stringify(response),
                                             //                        function () { }, "Get Team failed", 'OK');
                                             operation.success(response);
-
                                             ////console.log("Multi :" + JSON.stringify(response));
                                             ////console.log("fetch Multiple job type : Complete");
                                         },
@@ -497,16 +436,13 @@
                                                 ////console.log("fetch Multiple job type");
                                                 ////console.log(xhr);
                                                 ////console.log(error);
-
                                                 navigator.notification.alert(xhr.status + ' ' + error,
                                                     function() {}, "get jobStatus", 'OK');
                                             }
                                             return;
                                         }
                                     });
-
                                 }
-
                             }
                         },
                         schema: {
@@ -518,17 +454,13 @@
             // ddlpiority
             if (kendo.ui.DropDownList) {
                 $("#ddlpiority").kendoDropDownList({
-
-                    //optionLabel: "Select a team...",
                     dataTextField: "name",
                     dataValueField: "id",
                     optionLabel: "---Select---",
                     dataSource: new kendo.data.DataSource({
                         transport: {
                             read: function(operation) {
-
                                 // alert("init");
-
                                 if (app.configService.isMorkupData) {
                                     var response = _getPriorityTTSME;
                                     operation.success(response);
@@ -537,22 +469,22 @@
                                         beforeSend: app.loginService.viewModel.checkOnline,
                                         type: "POST",
                                         timeout: 180000,
-                                        url: app.configService.serviceUrl + 'post-json.service?s=transaction-service&o=getRegionListTTSME.json',
+                                        url: app.configService.serviceUrl + 'post-json.service?s=master-service&o=getPriority.json',
                                         data: JSON.stringify({
                                             "token": localStorage.getItem("token"),
+                                            "userId": JSON.parse(localStorage.getItem("profileData")).userId,
                                             "version": "2"
                                         }),
                                         dataType: "json",
                                         contentType: 'application/json',
                                         success: function(response) {
+                                            _getPriorityTTSME = response;
                                             //store response
                                             //localStorage.setItem("regionData", JSON.stringify(response));
                                             //pass the pass response to the DataSource
-
                                             //navigator.notification.alert(JSON.stringify(response),
                                             //                        function () { }, "Get Team failed", 'OK');
                                             operation.success(response);
-
                                             ////console.log("Multi :" + JSON.stringify(response));
                                             ////console.log("fetch Multiple job type : Complete");
                                         },
@@ -561,16 +493,13 @@
                                                 ////console.log("fetch Multiple job type");
                                                 ////console.log(xhr);
                                                 ////console.log(error);
-
                                                 navigator.notification.alert(xhr.status + ' ' + error,
                                                     function() {}, "get priorityList", 'OK');
                                             }
                                             return;
                                         }
                                     });
-
                                 }
-
                             }
                         },
                         schema: {
@@ -610,7 +539,6 @@
             alert(assignTo);
             var assignBy = that.get("assignBy");
             alert(assignBy);
-
         },
     });
     app.powerSearchService = {
