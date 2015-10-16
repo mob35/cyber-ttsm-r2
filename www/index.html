@@ -1169,7 +1169,11 @@
             <form class="search">
                 <input type="search" placeholder="Search..." autocomplete="off">
             </form>
+            <ul id="filterable-listview"></ul>
         </div>
+        <script type="text/x-kendo-tmpl" id="mobile-listview-filtering-template">
+            
+        </script>
         <!--  <div class="jb-search-wrap" data-bind="visible: isSearch">
             <form onsubmit="return false;">
                 <input class="jb-address" type="search" data-bind="value: searchtxt" placeholder="JB Id" />
@@ -1720,7 +1724,6 @@
                     </div>
                     <div class="position-right">
                         <label data-bind="text: selectItem.systemName"></label>
-                        GSM900(All),GSM1800
                     </div>
                 </li>
                 <li data-icon="contact">
@@ -1840,10 +1843,10 @@
                 </li>
                 <li data-icon="contact" class="job-bind" data-bind="visible: isReportType">
                     <label>
-                        Remark Over Due
+                        <b>Remark Over Due</b>
                     </label>
                     <div class="position-right">
-                        <textarea maxlength="1000" placeholder="Input Remark Over Due..." class="k-textbox" style="height: 60px" data-bind="value: selectItem.report"></textarea>
+                        <textarea maxlength="1000" placeholder="Input Remark Over Due..." class="k-textbox" style="height: 60px" data-bind="value: selectItem.Remark"></textarea>
                     </div>
                 </li>
                 <li data-icon="contact" data-bind="invisible: isMoreDetail">
@@ -4066,6 +4069,7 @@
     <script src="scripts/siteAccess.js"></script>
     <script src="scripts/reasonOverDue.js"></script>
     <script src="scripts/powerSearch.js"></script>
+    <script src="scripts/accept.js"></script>
     <!--end-->
     <script src="scripts/dashboard.js"></script>
     <script src="scripts/dashboardFilter.js"></script>
