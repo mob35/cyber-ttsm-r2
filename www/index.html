@@ -3437,7 +3437,7 @@
             <div data-role="navbar">
                 <span>Power Search</span>
                 <a data-role="button" data-rel="drawer" href="#my-drawer" class="ion" data-icon="menu" data-align="left"></a>
-                <a data-role="button" data-bind="click: showResult" data-icon="check" data-align="right"></a>
+                <a data-role="button" data-bind="click: showResult" href="#powerService" data-icon="check" data-align="right"></a>
             </div>
         </div>
         <ul data-role="listview" data-style="inset" data-type="group">
@@ -3567,6 +3567,109 @@
             </li>
         </ul>
     </div>
+    <!--powerService-->
+    <div  data-role="view" id="powerService" data-model="app.powerSearchService.viewModel" data-init="app.powerSearchService.init" data-show="app.powerSearchService.show" data-hide="app.powerSearchService.hide" data-layout="tabstrip-layout">
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="button" data-rel="drawer" href="#my-drawer" class="ion" data-icon="menu" data-align="left"></a>
+                <a data-icon="search" data-role="button" data-align="right" data-bind="click: onSearch"></a>
+                <span>Power Service</span>
+            </div>
+        </div>
+        <div>
+            <form class="search">
+                <input type="search" placeholder="Search..." autocomplete="off">
+            </form>
+            <ul id="filterable-listview"></ul>
+        </div>
+        <script type="text/x-kendo-tmpl" id="mobile-listview-filtering-template">
+            
+        </script>
+        <!--  <div class="jb-search-wrap" data-bind="visible: isSearch">
+            <form onsubmit="return false;">
+                <input class="jb-address" type="search" data-bind="value: searchtxt" placeholder="JB Id" />
+                <input class="jb-search" type="submit" value="" data-bind="click: gotoDetailSearch" />
+            </form>
+        </div> -->
+        <div style="height:10px">&nbsp;</div>
+        <span>Last Updated :
+                <span data-bind="text: lastupdateaccept"></span>
+        </span>
+        <div style="height: 10px">&nbsp;</div>
+        
+        <!--<ul id="fixed-listview" data-bind="source: job_dtls, click: editJob" class="inboxList"></ul>-->
+        <div data-role="content">
+            <ul id="lvAcceptList"></ul>
+        </div>
+        <ul data-role="actionsheet" id="AcceptActions">
+            <li class="km-actionsheet-title">Change Status to:</li>
+            <li>
+                <a data-action="app.jobService.viewModel.initJobNoDetail">Initiate</a>
+            </li>
+            <li>
+                <a data-action="app.jobService.viewModel.onSiteJobNoDetail">Onsite</a>
+            </li>
+            <!--<li><a href="#" data-action="waitreport">Waite for Report</a></li>
+             <li><a href="#" data-action="waitmore">Waite for More Detail</a></li>-->
+            <li>
+                <a data-action="app.jobService.viewModel.gotoDetail">Go to Detail</a>
+            </li>
+            <li>
+                <a data-action="app.jobService.viewModel.gotoAlarm">Check Alarm</a>
+            </li>
+        </ul>
+        <ul data-role="actionsheet" id="InitialActions">
+            <li class="km-actionsheet-title">Change Status to:</li>
+            <li>
+                <a data-action="app.jobService.viewModel.onSiteJobNoDetail">On Site</a>
+            </li>
+            <li>
+                <a data-action="app.jobService.viewModel.gotoReportDetail">Report</a>
+            </li>
+            <!--<li><a href="#" data-action="waitreport">Waite for Report</a></li>
+             <li><a href="#" data-action="waitmore">Waite for More Detail</a></li>-->
+            <li>
+                <a data-action="app.jobService.viewModel.gotoDetail">Go to Detail</a>
+            </li>
+            <li>
+                <a data-action="app.jobService.viewModel.gotoAlarm">Check Alarm</a>
+            </li>
+        </ul>
+        <ul data-role="actionsheet" id="OnsiteActions">
+            <li class="km-actionsheet-title">Change Status to:</li>
+            <li>
+                <a data-action="app.jobService.viewModel.initJobNoDetail">Initiate</a>
+            </li>
+            <li>
+                <a data-action="app.jobService.viewModel.gotoReportDetail">Report</a>
+            </li>
+            <!--<li><a href="#" data-action="waitreport">Waite for Report</a></li>
+             <li><a href="#" data-action="waitmore">Waite for More Detail</a></li>-->
+            <li>
+                <a data-action="app.jobService.viewModel.gotoDetail">Go to Detail</a>
+            </li>
+            <li>
+                <a data-action="app.jobService.viewModel.gotoAlarm">Check Alarm</a>
+            </li>
+        </ul>
+        <ul data-role="actionsheet" id="ReportActions">
+            <li class="km-actionsheet-title">Change Status to:</li>
+            <li>
+                <a data-action="app.jobService.viewModel.gotoReportDetail">Report</a>
+            </li>
+            <!--<li><a href="#" data-action="waitreport">Waite for Report</a></li>
+             <li><a href="#" data-action="waitmore">Waite for More Detail</a></li>-->
+            <li>
+                <a data-action="app.jobService.viewModel.gotoDetail">Go to Detail</a>
+            </li>
+            <li>
+                <a data-action="app.jobService.viewModel.gotoAlarm">Check Alarm</a>
+            </li>
+        </ul>
+    </div>
+
+
+
     <div data-role="view" id="SiteAlarm" data-layout="tabstrip-layout" data-model="app.jobService.viewModel" data-init="app.jobService.initSiteAlarm">
         <div data-role="header">
             <div data-role="navbar">
@@ -4069,6 +4172,7 @@
     <script src="scripts/siteAccess.js"></script>
     <script src="scripts/reasonOverDue.js"></script>
     <script src="scripts/powerSearch.js"></script>
+    <script src="scripts/powerService.js"></script>
     <script src="scripts/accept.js"></script>
     <!--end-->
     <script src="scripts/dashboard.js"></script>
